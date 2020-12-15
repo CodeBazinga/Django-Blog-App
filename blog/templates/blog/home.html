@@ -1,0 +1,11 @@
+{% extends 'blog/main.html' %}
+
+{% block content %}
+
+    <h2>Welcome to Blog App</h2>
+    <br>
+
+    <a href="{% url 'display' %}" class="btn btn-info" role="button">See All Blogs</a><br><br>
+    <a href="{% url 'create' %}" class="btn btn-success" role="button">Create New Blogs</a>    
+
+{% endblock %}

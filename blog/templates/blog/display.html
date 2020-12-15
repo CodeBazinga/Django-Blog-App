@@ -1,0 +1,44 @@
+{% extends 'blog/main.html' %}
+
+{% block content %}
+
+    {% for i in blog %}
+    <br>
+    <!-- <div class ="col-md-4">
+        <div class= "card card-body border-warning ">
+            <h4 class="card-title font-weight-bold mb-2">{{ i.title }}</h4>
+            <div class="sub-container">
+                <div class="columns">
+                    <p class="card-text">{{i.description}}</p>
+                </div>
+                <p><img class="card-img" src="/media/{{ i.image }}" height="150" width="150"></p>
+            </div>
+            <a class="btn btn-sm btn-danger" href="{% url 'delete' i.id %}">Delete</a><br>
+            <a class="btn btn-sm btn-success" href="{% url 'update' i.id %}">Update</a>
+        </div>
+    </div> -->
+    <div class="card text-center mb-3 border-warning" style="max-width: 540px;">
+        <div class="row g-0">
+          <div class="col-md-4">
+            <img class="card-img img-fluid" src="/media/{{ i.image }}">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body ">
+              <h5 class="card-title h2">{{i.title}}</h5>
+              <p class="card-text">{{i.description}}</p>
+              <a class="btn btn-sm btn-danger" href="{% url 'delete' i.id %}">Delete</a>
+              <a class="btn btn-sm btn-info" href="{% url 'update' i.id %}">Update</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    <br>
+    {% endfor %}
+
+    <br>
+    <a href="{% url 'home' %}" class="btn btn-primary" role="button">Home</a><br><br>
+    <a href="{% url 'create' %}" class="btn btn-success" role="button">Create New Blog</a>    
+
+
+
+{% endblock %}
